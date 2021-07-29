@@ -1,0 +1,201 @@
+:root {
+    --main-color: #e02f6b;
+    --blue: #0000ff;
+    --dark-blue: #18293c;
+    --orange: #ffa500;
+    --green-yellow: #cddc39;
+    --pink-light: #efa2b4;
+    --cyan-light: #aef1ee;
+    --white: #fff;
+    --white-alpha-60: rgba(255, 255, 255, 0.6);
+    --white-alpha-40: rgba(255, 255, 255, 0.4);
+    --white-alpha-25: rgba(255, 255, 255, 0.25);
+}
+
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceTop {
+    0%, 100% {
+        transform: translateY(-400px) scale(1.5);
+    }
+    50% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.home {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, var(--pink-light), var(--cyan-light));
+}
+
+.glass-container {
+    background-color: var(--white-alpha-25);
+    border: solid var(--white-alpha-40) 1px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    min-height: 700px;
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.3);
+}
+
+.bg-circles {
+    position: fixed;
+    min-height: 700px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.bg-circles div {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.bg-circles .circle-1 {
+    height: 80px;
+    width: 80px;
+    background-color: var(--blue);
+    left: 5%;
+    top: 10%;
+    opacity: 0.3;
+    animation: zoomInOut 8s linear infinite
+}
+
+.bg-circles .circle-2 {
+    height: 100px;
+    width: 100px;
+    background-color: var(--main-color);
+    left: 30%;
+    top: 50%;
+    opacity: 0.4;
+    animation: bounceTop 5s ease-in-out infinite
+}
+
+.bg-circles .circle-3 {
+    height: 120px;
+    width: 120px;
+    background-color: var(--white);
+    right: -60px;
+    top: 40%;
+    opacity: 0.6;
+}
+
+.bg-circles .circle-4 {
+    height: 50px;
+    width: 50px;
+    background-color: var(--orange);
+    left: -30px;
+    top: 80%;
+    opacity: 0.6;
+}
+
+.home-row {
+    min-height: inherit;
+}
+
+.intro {
+    margin: 60px;
+}
+
+.intro p {
+    font-weight: 100;
+    font-size: 24px;
+}
+
+.intro h1, .Typewriter {
+    font-weight: 400;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+.intro h2 {
+    font-weight: 100;
+    font-size: 32px;
+    text-transform: capitalize;
+}
+
+.intro-btn {
+    text-decoration: none;
+}
+
+.intro-btn:focus, .intro-btn:active {
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    color: var(--main-color);
+}
+
+.intro-link {
+    margin: 10px;
+}
+
+.intro-btn {
+    line-height: 1.5;
+    background-color: var(--white-alpha-25);
+    padding: 10px 28px;
+    display: inline-block;
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--main-color);
+    text-transform: capitalize;
+    border: 1px solid var(--white-alpha-40);
+    font-size: 16px;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+
+.intro-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.intro-btn:hover::before {
+    width: 100%;
+}
+
+.intro-btn:hover {
+    color: var(--white);
+}
+
+.modal-background {
+    background-color: rgba(100, 100, 100, 0.7);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.modal-backdrop.show, .modal-backdrop.fade {
+    opacity: 1;
+}
+
+.modal-container {
+    background-color: var(--white-alpha-40);
+    border: solid var(--white-alpha-60) 1px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+@media (min-width: 1800px) {
+    .container{
+        max-width: 1600px;
+    }
+}
